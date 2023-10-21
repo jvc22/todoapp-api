@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./dist/server.js",
-    "build": "tsc -p tsconfig.json && prisma generate",
+    "build": "tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
