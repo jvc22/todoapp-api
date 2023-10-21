@@ -58,5 +58,6 @@ server.delete('/task/:id', async (req, res) => {
     }
 });
 server.listen({
-    port: 3333,
+    host: '0.0.0.0',
+    port: process.env.PORT ?? 3333,
 });
