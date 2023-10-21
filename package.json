@@ -1,0 +1,26 @@
+{
+  "name": "vite-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./dist/server.js",
+    "build": "tsc -p tsconfig.json && prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.4.0",
+    "@prisma/client": "^5.4.2",
+    "date-fns-tz": "^2.0.0",
+    "fastify": "^4.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "prisma": "^5.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
