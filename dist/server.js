@@ -5,7 +5,7 @@ import { utcToZonedTime } from "date-fns-tz";
 import { startOfDay, endOfDay } from "date-fns";
 const server = fastify();
 await server.register(fastifyCors, {
-    origin: 'http://localhost:5173'
+    origin: 'https://todoapp-jvcs.vercel.app/'
 });
 const prisma = new PrismaClient({
     log: ['query'],
