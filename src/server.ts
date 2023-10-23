@@ -68,7 +68,7 @@ server.put('/task/:id', async (req, res) => {
             id,
         },
         data: {
-            finished: !isFinished
+            finished: !isFinished?.finished
         }
     })
 
