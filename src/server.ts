@@ -6,7 +6,7 @@ import { startOfDay, endOfDay } from "date-fns"
 
 const server = fastify()
 await server.register(fastifyCors, {
-    origin: 'https://todo-jvcs.vercel.app'
+    origin: 'https://todo-jvcs.netlify.app'
 })
 const prisma = new PrismaClient({
     log: ['query'],
