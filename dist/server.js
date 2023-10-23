@@ -36,7 +36,6 @@ server.post('/task', async (req, res) => {
         data: {
             name,
             descr,
-            finished: false
         }
     });
     if (task) {
