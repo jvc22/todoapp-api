@@ -40,7 +40,8 @@ server.post('/task', async (req, res) => {
     const task = await prisma.task.create({
         data: {
             name,
-            descr
+            descr,
+            finished: false
         }
     })
 
@@ -49,6 +50,34 @@ server.post('/task', async (req, res) => {
     }
 
     res.status(404).send({message: 'Task was not created due to an error.'})
+})
+
+server.put('/task/:id', async (req, res) => {
+    const {id} = req.params as {id: string}
+
+    const isFinished = await prisma.task.findUnique({
+        where: {
+            id,
+        },
+        select: {
+            finished: true,
+        }
+    })
+
+    const updateFinished = await prisma.task.update({
+        where: {
+            id,
+        },
+        data: {
+            finished: !isFinished
+        }
+    })
+
+    if(updateFinished) {
+        res.status(200).send({message: 'Task status successfully changed.'})
+    } else {
+        res.status(404).send({message: 'Task was not updated due to an error.'})
+    }
 })
 
 server.delete('/task/:id', async (req, res) => {
