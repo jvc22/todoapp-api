@@ -24,6 +24,9 @@ server.get('/task', async (req, res) => {
                 gte: startOfToday,
                 lte: endOfToday,
             }
+        },
+        orderBy: {
+            created_at: "asc",
         }
     })
 
