@@ -34,11 +34,14 @@ server.get('/task', async (req, res) => {
     }
 });
 server.post('/task', async (req, res) => {
+    const brTimeZone = 'America/Sao_Paulo';
+    const today = utcToZonedTime(new Date(), brTimeZone);
     const { name, descr } = req.body;
     const task = await prisma.task.create({
         data: {
             name,
             descr,
+            created_at: today
         }
     });
     if (task) {

@@ -15,8 +15,8 @@ model Task {
   id         String   @id @default(uuid())
   name       String
   descr      String
-  finished   Boolean @default(false)
-  created_at DateTime @default(now())
+  finished   Boolean  @default(false)
+  created_at DateTime
 
   @@map("task")
 }
